@@ -1,0 +1,23 @@
+{
+  "info": { "name": "Candidate PoC API", "_postman_id": "pocec", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "item": [
+    {
+      "name": "GenerateScore",
+      "request": {
+        "method": "POST",
+        "header": [{"key":"Content-Type","value":"application/json"}],
+        "body": {"mode":"raw","raw":"{ \"candidate\": { \"name\":\"Alice Kumar\",\"skills\":[\"Java\",\"SQL\",\"React\"] } }"},
+        "url": {"raw":"{{API_BASE}}/GenerateScore","variable":[{"key":"API_BASE","value":"http://localhost:7071/api"}]}
+      }
+    },
+    {
+      "name": "GenerateFeedback",
+      "request": {
+        "method": "POST",
+        "header": [{"key":"Content-Type","value":"application/json"}],
+        "body": {"mode":"raw","raw":"{ \"candidate\":\"Alice Kumar\", \"action\":\"approve\", \"codeSnippet\":\"function x(){return 1==1}\" }"},
+        "url": {"raw":"{{API_BASE}}/GenerateFeedback","variable":[{"key":"API_BASE","value":"http://localhost:7071/api"}]}
+      }
+    }
+  ]
+}
